@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090f">
+<meta name="description" content="COS-DROP — официальный информационный сайт проекта.">
+<title>COS-DROP — официальный сайт</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#07080d;
+    --bg2:#0b0d14;
+    --card:#10131c;
+    --card2:#141823;
+    --text:#f5f6fb;
+    --muted:#8d94a8;
+    --line:rgba(255,255,255,.08);
+    --accent:#8065ff;
+    --accent2:#a58fff;
+    --cyan:#69d9ff;
+    --green:#55e6a5;
+    --shadow:0 25px 80px rgba(0,0,0,.42);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+        radial-gradient(circle at 10% 0%,rgba(128,101,255,.16),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(105,217,255,.08),transparent 25%),
+        var(--bg);
+    color:var(--text);
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+.container{
+    width:min(1160px,calc(100% - 32px));
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:74px;
+    z-index:100;
+    background:rgba(7,8,13,.72);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--line);
+}
+
+.nav{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:-.7px;
+}
+
+.logo img{
+    width:40px;
+    height:40px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 0 30px rgba(128,101,255,.25);
+}
+
+.logo span{
+    color:var(--accent2);
+}
+
+.nav-links{
+    display:flex;
+    gap:4px;
+}
+
+.nav-links a{
+    padding:10px 13px;
+    color:var(--muted);
+    border-radius:10px;
+    transition:.2s;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:var(--text);
+    background:var(--card);
+}
+
+.header-button{
+    padding:10px 15px;
+    border-radius:11px;
+    background:var(--accent);
+    color:white;
+    font-weight:800;
+    font-size:13px;
+    transition:.2s;
+}
+
+.header-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(128,101,255,.3);
+}
+
+/* ================= HERO ================= */
+
+main{
+    padding-top:74px;
+}
+
+.hero{
+    min-height:720px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:50px;
+    position:relative;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border-radius:999px;
+    background:rgba(85,230,165,.07);
+    border:1px solid rgba(85,230,165,.18);
+    color:var(--green);
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 12px var(--green);
+}
+
+.hero h1{
+    font-size:clamp(52px,7vw,88px);
+    line-height:.9;
+    letter-spacing:-6px;
+    max-width:700px;
+}
+
+.hero h1 span{
+    background:linear-gradient(
+        100deg,
+        #fff 10%,
+        #a58fff 55%,
+        #69d9ff 100%
+    );
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    max-width:590px;
+    margin-top:25px;
+    color:var(--muted);
+    line-height:1.7;
+    font-size:17px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:30px;
+}
+
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 18px;
+    border-radius:13px;
+    font-weight:800;
+    font-size:14px;
+    transition:.22s;
+}
+
+.button-primary{
+    background:linear-gradient(135deg,#8065ff,#987bff);
+    color:white;
+    box-shadow:0 15px 35px rgba(128,101,255,.22);
+}
+
+.button-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 40px rgba(128,101,255,.35);
+}
+
+.button-secondary{
+    background:var(--card);
+    border:1px solid var(--line);
+    color:var(--text);
+}
+
+.button-secondary:hover{
+    transform:translateY(-3px);
+    border-color:rgba(128,101,255,.4);
+}
+
+/* HERO IMAGE */
+
+.hero-visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    min-height:450px;
+}
+
+.hero-glow{
+    position:absolute;
+    width:330px;
+    height:330px;
+    background:rgba(128,101,255,.22);
+    filter:blur(75px);
+    border-radius:50%;
+}
+
+.hero-image{
+    position:relative;
+    width:min(390px,80%);
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:45px;
+    border:1px solid rgba(255,255,255,.11);
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.55),
+        0 0 80px rgba(128,101,255,.18);
+    transform:rotate(2deg);
+    transition:.4s;
+}
+
+.hero-image:hover{
+    transform:rotate(0deg) scale(1.025);
+}
+
+.floating-card{
+    position:absolute;
+    z-index:3;
+    padding:12px 15px;
+    border-radius:14px;
+    background:rgba(16,19,28,.86);
+    backdrop-filter:blur(14px);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    font-size:12px;
+    font-weight:800;
+}
+
+.floating-card strong{
+    display:block;
+    margin-top:3px;
+    font-size:14px;
+}
+
+.floating-one{
+    top:45px;
+    right:2%;
+}
+
+.floating-two{
+    bottom:50px;
+    left:2%;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 45px;
+}
+
+.section-title .mini{
+    color:var(--accent2);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.section-title h2{
+    font-size:38px;
+    letter-spacing:-1.8px;
+}
+
+.section-title p{
+    margin-top:12px;
+    color:var(--muted);
+    line-height:1.6;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.info-card{
+    padding:25px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.025),transparent),
+        var(--card);
+    transition:.25s;
+}
+
+.info-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(128,101,255,.35);
+    box-shadow:var(--shadow);
+}
+
+.info-icon{
+    width:48px;
+    height:48px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:rgba(128,101,255,.1);
+    border:1px solid rgba(128,101,255,.16);
+    font-size:23px;
+    margin-bottom:18px;
+}
+
+.info-card h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.65;
+}
+
+/* ================= CASES ================= */
+
+.case-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.case-card{
+    position:relative;
+    overflow:hidden;
+    padding:18px;
+    border-radius:18px;
+    border:1px solid var(--line);
+    background:var(--card);
+    transition:.25s;
+}
+
+.case-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(128,101,255,.35);
+    box-shadow:var(--shadow);
+}
+
+.case-icon{
+    height:150px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:
+        radial-gradient(circle,rgba(128,101,255,.25),transparent 55%),
+        #0b0d14;
+    font-size:65px;
+    margin-bottom:16px;
+}
+
+.case-card h3{
+    font-size:16px;
+}
+
+.case-card p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.5;
+    margin-top:6px;
+}
+
+.case-tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:5px 8px;
+    border-radius:7px;
+    background:rgba(128,101,255,.09);
+    color:#b4a2ff;
+    font-size:10px;
+    font-weight:900;
+}
+
+/* ================= HOW ================= */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    counter-reset:step;
+}
+
+.step{
+    padding:26px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    position:relative;
+}
+
+.step-number{
+    font-size:12px;
+    color:var(--accent2);
+    font-weight:900;
+    margin-bottom:30px;
+}
+
+.step h3{
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.step p{
+    color:var(--muted);
+    line-height:1.65;
+    font-size:14px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+    position:relative;
+    overflow:hidden;
+    padding:45px;
+    border-radius:25px;
+    border:1px solid rgba(128,101,255,.2);
+    background:
+        radial-gradient(circle at 90% 20%,rgba(105,217,255,.1),transparent 30%),
+        radial-gradient(circle at 10% 80%,rgba(128,101,255,.15),transparent 35%),
+        var(--card);
+    text-align:center;
+}
+
+.contact-box h2{
+    font-size:34px;
+    letter-spacing:-1px;
+}
+
+.contact-box p{
+    color:var(--muted);
+    margin:12px auto 25px;
+    max-width:600px;
+    line-height:1.6;
+}
+
+.contacts{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.contact{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:12px 16px;
+    border-radius:12px;
+    background:var(--card2);
+    border:1px solid var(--line);
+    font-weight:800;
+    font-size:13px;
+    transition:.2s;
+}
+
+.contact:hover{
+    transform:translateY(-2px);
+    border-color:rgba(128,101,255,.4);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:30px 0;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
+}
+
+.footer-brand img{
+    width:32px;
+    height:32px;
+    object-fit:cover;
+    border-radius:9px;
+}
+
+.footer p{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:4px;
+}
+
+.footer-links{
+    display:flex;
+    gap:16px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:var(--text);
+}
+
+/* ================= SNOW ================= */
+
+.snow{
+    position:fixed;
+    top:-20px;
+    color:white;
+    opacity:.65;
+    z-index:90;
+    pointer-events:none;
+    animation:snowfall linear forwards;
+}
+
+@keyframes snowfall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        min-height:auto;
+        padding:80px 0;
+        text-align:center;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        min-height:370px;
+    }
+
+    .about-grid,
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .case-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:calc(100% - 22px);
+    }
+
+    header{
+        height:64px;
+    }
+
+    main{
+        padding-top:64px;
+    }
+
+    .header-button{
+        padding:9px 11px;
+        font-size:11px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .logo img{
+        width:34px;
+        height:34px;
+    }
+
+    .hero{
+        padding:65px 0;
+    }
+
+    .hero h1{
+        font-size:50px;
+        letter-spacing:-4px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .hero-image{
+        width:250px;
+        border-radius:30px;
+    }
+
+    .hero-visual{
+        min-height:290px;
+    }
+
+    .floating-card{
+        transform:scale(.9);
+    }
+
+    .floating-one{
+        right:0;
+        top:15px;
+    }
+
+    .floating-two{
+        left:0;
+        bottom:15px;
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+    .section-title h2{
+        font-size:29px;
+    }
+
+    .case-grid{
+        grid-template-columns:1fr 1fr;
+        gap:9px;
+    }
+
+    .case-card{
+        padding:10px;
+        border-radius:14px;
+    }
+
+    .case-icon{
+        height:110px;
+        font-size:48px;
+    }
+
+    .case-card h3{
+        font-size:13px;
+    }
+
+    .case-card p{
+        font-size:10px;
+    }
+
+    .contact-box{
+        padding:28px 17px;
+    }
+
+    .contact-box h2{
+        font-size:27px;
+    }
+
+    .footer{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+
+        <a href="#home" class="logo">
+            <img src="imageman.png" alt="COS-DROP">
+            COS<span>-DROP</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#about">О проекте</a>
+            <a href="#cases">Кейсы</a>
+            <a href="#how">Как это работает</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+
+        <a
+            class="header-button"
+            href="https://t.me/cosdropbot"
+            target="_blank"
+            rel="noopener"
+        >
+            Открыть бота
+        </a>
+
+    </div>
+</header>
+
+
+<main id="home">
+
+    <!-- HERO -->
+
+    <section class="hero container">
+
+        <div class="hero-content">
+
+            <div class="status">
+                <span class="status-dot"></span>
+                COS-DROP ONLINE
+            </div>
+
+            <h1>
+                Добро пожаловать<br>
+                в <span>COS-DROP</span>
+            </h1>
+
+            <p class="hero-description">
+                COS-DROP — Telegram-проект с кейсами, виртуальной валютой
+                SD и коллекцией уникальных предметов. Открывай кейсы,
+                собирай редкие дропы и следи за развитием проекта.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    class="button button-primary"
+                    href="https://t.me/cosdropbot"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    🤖 Перейти в бота
+                </a>
+
+                <a
+                    class="button button-secondary"
+                    href="#about"
+                >
+                    Узнать больше
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="hero-glow"></div>
+
+            <img
+                class="hero-image"
+                src="imageman.png"
+                alt="COS-DROP"
+            >
+
+            <div class="floating-card floating-one">
+                🤖 Telegram Bot
+                <strong>@cosdropbot</strong>
+            </div>
+
+            <div class="floating-card floating-two">
+                👤 Владелец
+                <strong>@d3v_exe</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <div class="mini">ABOUT PROJECT</div>
+                <h2>Что такое COS-DROP?</h2>
+                <p>
+                    Небольшой Telegram-проект, созданный для любителей
+                    коллекционирования виртуальных предметов и открытия кейсов.
+                </p>
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="info-card">
+                    <div class="info-icon">🎁</div>
+                    <h3>Кейсы</h3>
+                    <p>
+                        В проекте доступны разные кейсы с собственными
+                        наборами предметов и уровнями редкости.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">💎</div>
+                    <h3>SD</h3>
+                    <p>
+                        Внутренняя виртуальная валюта проекта,
+                        используемая в игровой системе COS-DROP.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🎒</div>
+                    <h3>Коллекция</h3>
+                    <p>
+                        Полученные предметы можно собирать в личную
+                        коллекцию и следить за редкими находками.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CASES -->
+
+    <section id="cases">
+
+        <div class="container">
+
+            <div class="section-title">
+                <div class="mini">CASES</div>
+                <h2>Кейсы COS-DROP</h2>
+                <p>
+                    Каждый кейс имеет собственную тематику и набор предметов.
+                </p>
+            </div>
+
+
+            <div class="case-grid">
+
+                <div class="case-card">
+                    <div class="case-icon">🎒</div>
+                    <h3>Старт-кейс</h3>
+                    <p>
+                        Первый кейс для знакомства с проектом.
+                    </p>
+                    <span class="case-tag">START</span>
+                </div>
+
+
+                <div class="case-card">
+                    <div class="case-icon">📦</div>
+                    <h3>Basic Case</h3>
+                    <p>
+                        Базовые предметы разных уровней редкости.
+                    </p>
+                    <span class="case-tag">BASIC</span>
+                </div>
+
+
+                <div class="case-card">
+                    <div class="case-icon">🏫</div>
+                    <h3>School Case</h3>
+                    <p>
+                        Тематическая коллекция школьных предметов.
+                    </p>
+                    <span class="case-tag">SCHOOL</span>
+                </div>
+
+
+                <div class="case-card">
+                    <div class="case-icon">😂</div>
+                    <h3>Meme Case</h3>
+                    <p>
+                        Мемные предметы и необычные находки.
+                    </p>
+                    <span class="case-tag">MEME</span>
+                </div>
+
+
+                <div class="case-card">
+                    <div class="case-icon">💎</div>
+                    <h3>Rare Case</h3>
+                    <p>
+                        Коллекция редких предметов.
+                    </p>
+                    <span class="case-tag">RARE</span>
+                </div>
+
+
+                <div class="case-card">
+                    <div class="case-icon">🟣</div>
+                    <h3>Epic Case</h3>
+                    <p>
+                        Эпические предметы с высокой редкостью.
+                    </p>
+                    <span class="case-tag">EPIC</span>
+                </div>
+
+
+                <div class="case-card">
+                    <div class="case-icon">🌙</div>
+                    <h3>Night Case</h3>
+                    <p>
+                        Ночная тематическая коллекция.
+                    </p>
+                    <span class="case-tag">NIGHT</span>
+                </div>
+
+
+                <div class="case-card">
+                    <div class="case-icon">👑</div>
+                    <h3>COS Case</h3>
+                    <p>
+                        Особый кейс с самыми редкими предметами проекта.
+                    </p>
+                    <span class="case-tag">COS</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW -->
+
+    <section id="how">
+
+        <div class="container">
+
+            <div class="section-title">
+                <div class="mini">HOW IT WORKS</div>
+                <h2>Как начать?</h2>
+                <p>
+                    Всё происходит непосредственно в Telegram-боте.
+                </p>
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-number">01 / TELEGRAM</div>
+                    <h3>Открой бота</h3>
+                    <p>
+                        Перейди в официальный Telegram-бот COS-DROP
+                        и нажми кнопку запуска.
+                    </p>
+                </div>
+
+
+                <div class="step">
+                    <div class="step-number">02 / PLAY</div>
+                    <h3>Изучай возможности</h3>
+                    <p>
+                        Используй доступные функции проекта,
+                        получай SD и открывай доступные кейсы.
+                    </p>
+                </div>
+
+
+                <div class="step">
+                    <div class="step-number">03 / COLLECTION</div>
+                    <h3>Собирай предметы</h3>
+                    <p>
+                        Получай различные предметы и собирай
+                        собственную коллекцию COS-DROP.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTS -->
+
+    <section id="contacts">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>Готов попробовать COS-DROP?</h2>
+
+                <p>
+                    Основное взаимодействие с проектом проходит
+                    в Telegram. Переходи в официального бота,
+                    чтобы начать.
+                </p>
+
+                <div class="contacts">
+
+                    <a
+                        class="contact"
+                        href="https://t.me/cosdropbot"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        🤖 @cosdropbot
+                    </a>
+
+                    <a
+                        class="contact"
+                        href="https://t.me/d3v_exe"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        👤 @d3v_exe
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer">
+
+        <div>
+            <div class="footer-brand">
+                <img src="imageman.png" alt="COS-DROP">
+                COS-DROP
+            </div>
+
+            <p>
+                Официальный информационный сайт проекта.
+            </p>
+        </div>
+
+
+        <div class="footer-links">
+
+            <a
+                href="https://t.me/cosdropbot"
+                target="_blank"
+                rel="noopener"
+            >
+                Бот
+            </a>
+
+            <a href="#about">
+                О проекте
+            </a>
+
+            <a href="#cases">
+                Кейсы
+            </a>
+
+            <a href="#contacts">
+                Контакты
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================= SNOW ================= */
+
+let snowEnabled = true;
+
+function createSnow(){
+
+    if(!snowEnabled) return;
+
+    const snow = document.createElement("div");
+
+    snow.className = "snow";
+
+    snow.textContent = Math.random() > .5 ? "❄" : "•";
+
+    snow.style.left = Math.random() * 100 + "vw";
+
+    snow.style.fontSize =
+        (7 + Math.random() * 11) + "px";
+
+    snow.style.animationDuration =
+        (5 + Math.random() * 8) + "s";
+
+    document.body.appendChild(snow);
+
+    setTimeout(function(){
+        snow.remove();
+    },14000);
+}
+
+setInterval(createSnow,650);
+
+
+/* ================= ACTIVE NAV ================= */
+
+const sections = document.querySelectorAll("section[id]");
+const links = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll",function(){
+
+    let current = "";
+
+    sections.forEach(function(section){
+
+        const top = section.offsetTop - 130;
+
+        if(window.scrollY >= top){
+            current = section.id;
+        }
+
+    });
+
+    links.forEach(function(link){
+
+        link.style.color = "";
+
+        if(link.getAttribute("href") === "#" + current){
+            link.style.color = "var(--text)";
+        }
+
+    });
+
+});
+
+
+/* ================= IMAGE FALLBACK ================= */
+
+const images = document.querySelectorAll("img");
+
+images.forEach(function(image){
+
+    image.addEventListener("error",function(){
+
+        image.style.background =
+            "linear-gradient(135deg,#8065ff,#69d9ff)";
+
+        image.alt = "COS-DROP";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
